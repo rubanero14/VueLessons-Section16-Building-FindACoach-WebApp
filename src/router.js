@@ -14,23 +14,26 @@ const router = createRouter({
             path: '/', redirect: '/coaches',
         },
         {
-            path: '/coaches', components: CoachesList,
+            path: '/coaches', component: CoachesList,
         },
         {
-            path: '/coaches/:id', components: CoachDetail, children: [
+            path: '/coaches/:id', 
+            component: CoachDetail,
+            props: true,
+            children: [
                 {
-                    path: '/contact', components: ContactCoach  // /coaches/a1/contact
+                    path: 'contact', component: ContactCoach  // /coaches/a1/contact
                 }
             ]
         },
         {
-            path: '/register', components: CoachRegistration,
+            path: '/register', component: CoachRegistration,
         },
         {
-            path: '/requests', components: RequestsReceived,
+            path: '/requests', component: RequestsReceived,
         },
         {
-            path: '/:notFound(.*)', components: NotFound,
+            path: '/:notFound(.*)', component: NotFound,
         }
     ],
 });
