@@ -79,7 +79,7 @@
       <a href="#lastname" v-show="!lastName.isValid">Lastname</a>
       <a href="#description" v-show="!description.isValid">Description</a>
       <a href="#rate" v-show="!rate.isValid">Hourly Rate</a>
-      <a  href="#areas" v-show="!areas.isValid">Area of Expertise</a>
+      <a href="#areas" v-show="!areas.isValid">Area of Expertise</a>
       sections are empty!
       Please fill up and Submit again!
     </p>
@@ -117,16 +117,19 @@ export default {
   },
   methods: {
     clearValidity(input) {
-      if(this[input].val != null && this[input].val != [] && this[input].val != '') {
+      if(this[input].val != null || this[input].val.length > 0 || this[input].val != '') {
         this[input].isValid = true;
+      }
+      if(this.firstName.isValid && this.lastName.isValid && this.description.isValid && this.rate.isValid && this.areas.isValid){
+        this.formIsValid = true;
       }
     },
     validateForm(){
       this.formIsValid = true;
-      
-       if (this.firstName.val === '') {
-        this.firstName.isValid = false;
-        this.formIsValid = false;
+
+      if (this.firstName.val === '') {
+      this.firstName.isValid = false;
+      this.formIsValid = false;
       }
       if (this.lastName.val === '') {
         this.lastName.isValid = false;
