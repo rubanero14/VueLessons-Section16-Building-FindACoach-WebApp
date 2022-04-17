@@ -89,12 +89,14 @@ textarea {
   font: inherit;
   border: 1px solid #ccc;
   padding: 0.15rem;
+  border-radius: 4px;
+  border: 1px solid #333;
 }
 
 input:focus,
 textarea:focus {
   border-color: #3d008d;
-  background-color: #faf6ff;
+  background-color: #ededed;
   outline: none;
 }
 

@@ -189,6 +189,7 @@ textarea {
   width: 100%;
   border: 1px solid #ccc;
   font: inherit;
+  border-radius: 4px;
 }
 
 input:focus,
