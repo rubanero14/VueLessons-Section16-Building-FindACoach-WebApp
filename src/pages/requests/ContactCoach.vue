@@ -45,6 +45,16 @@ export default {
                 this.formIsValid = false;
             } else { this.formIsValid = true; }
 
+            if(this.formIsValid){
+                this.$store.dispatch('requests/contactCoach', {
+                    email: this.email,
+                    message: this.message, 
+                    coachId: this.$route.params.id,
+                });
+                console.log(this.email,this.message, this.$route.params.id);
+                this.$router.replace('/coaches');
+            }    
+
             console.log('Form Valid: '+this.formIsValid, 'Email Valid: '+ this.email.isValid, 'Message Valid: '+ this.message.isValid,)
         },
         submitForm(){
