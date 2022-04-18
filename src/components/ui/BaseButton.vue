@@ -36,9 +36,9 @@ a {
   text-decoration: none;
   padding: 0.75rem 1.5rem;
   font: inherit;
-  background-color: #333;
+  background-color: #ccc;
   border: 1px solid #333;
-  color: #ccc;
+  color: #333;
   cursor: pointer;
   border-radius: 30px;
   margin-right: 0.5rem;
@@ -49,7 +49,8 @@ a:hover,
 a:active,
 button:hover,
 button:active {
-  background-color: #828282;
+  background-color: #333;
+  color: #ccc;
   border-color: #333;
 }
 
@@ -63,12 +64,14 @@ button:active {
   background-color: transparent;
   border-color: #270041;
   color: #270041;
+  background: #ccc;
 }
 
 .flat:hover,
 .flat:active,
 .outline:hover,
 .outline:active {
-  background-color: #ccc;
+  background-color: #f5f5f5;
+  color: #333;
 }
 </style>
