@@ -9,7 +9,7 @@ export default {
             })
         });
         
-        const responseData = await response.json;
+        const responseData = await response.json();
 
         if(!response.ok){
             console.log(responseData);
@@ -51,4 +51,11 @@ export default {
             tokenExpiration: responseData.expiresIn,
         })
     },
+    logout(context){
+        context.commit('setUser', {
+            token: null,
+            userId: null,
+            tokenExpiration: null,
+        })
+    }
 }
