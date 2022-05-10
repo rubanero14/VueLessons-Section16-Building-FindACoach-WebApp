@@ -1,10 +1,12 @@
 <template>
+  <section>
     <the-header></the-header>
     <router-view v-slot="slotProps">
       <transition name="route" mode="out-in">
         <component :is="slotProps.Component"></component>
       </transition>
     </router-view>
+  </section>
 </template>
 
 <script>
@@ -12,6 +14,21 @@ import TheHeader from './components/layout/TheHeader.vue';
 export default {
     components: {
         TheHeader,
+    },
+    computed: {
+      didAutoLogout(){
+        return this.$store.getters.didAutoLogout;
+      },
+    },
+    created(){
+      this.$store.dispatch('autoLogin');
+    },
+    watch: {
+      didAutoLogout(newValue, oldValue){
+        if(newValue && newValue !== oldValue){
+          this.$router.replace('/coaches');
+        }
+      },
     },
 };
 </script>
