@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router';
+import store from './store/index.js';
 
 //import optional components only when needed
 const CoachDetail = () => import('./pages/coaches/CoachDetail.vue');
@@ -8,7 +9,6 @@ const RequestsReceived = () => import('./pages/requests/RequestsReceived.vue');
 const UserAuth = () => import('./pages/auth/UserAuth.vue');
 const CoachesList = () => import('./pages/coaches/CoachesList.vue');
 const NotFound = () => import('./pages/NotFound.vue');
-const store = () => import('./store/index.js');
 
 const router = createRouter({
     history: createWebHistory(),

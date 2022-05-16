@@ -10,7 +10,7 @@ import BaseSpinner from './components/ui/BaseSpinner.vue';
 
 /* Some components declared as Async Components to enable dynamically downloaded the source code only when needed in order 
 to optimize page loading time */ 
-const BaseDialog = defineAsyncComponent(()=> import('./components/ui/BaseDialog.vue'));
+const BaseDialog = defineAsyncComponent(() => import('./components/ui/BaseDialog.vue'));
 
 const app = createApp(App);
 
